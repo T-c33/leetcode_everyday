@@ -1,4 +1,4 @@
-package leetcode_everyday
+package main
 
 func countEven(num int) int {
 	if num < 10 {
