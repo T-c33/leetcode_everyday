@@ -34,3 +34,27 @@ func evaluate(s string, knowledge [][]string) string {
 	}
 	return s
 }
+
+func evaluate1(s string, knowledge [][]string) string {
+	var m map[string]string = make(map[string]string)
+	for _, vec := range knowledge {
+		m[vec[0]] = vec[1]
+	}
+	vec := strings.Split(s, "(")
+	res := ""
+	for _, sub := range vec {
+		vecsub := strings.Split(sub, ")")
+		if len(vecsub) == 1 {
+			res += sub
+		} else {
+			if ele, ok := m[vecsub[0]]; !ok {
+				res += "?"
+			} else {
+				res += ele
+			}
+			res += vecsub[1]
+		}
+	}
+	return res
+
+}

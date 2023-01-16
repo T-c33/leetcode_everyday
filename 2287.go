@@ -1,3 +1,5 @@
+package main
+
 func rearrangeCharacters(s, target string) int {
 	var cntS, cntT [26]int
 	for _, c := range s {

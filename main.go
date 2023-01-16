@@ -3,9 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	ans := evaluate("(name)is(age)yearsold", [][]string{
-		{"name", "bob"}, {"age", "two"},
-	})
+	ans := areSentencesSimilar("My name is Haley", "My Haley")
 	fmt.Printf("ans : %v", ans)
 
 }
